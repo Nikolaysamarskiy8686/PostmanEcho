@@ -76,7 +76,7 @@ class PostmanEchoTest {
                 .get("/basic-auth")
 
                 .then()
-                .statusCode(300)
+                .statusCode(200)
                 .body("authenticated", equalTo(true))
         ;
 
