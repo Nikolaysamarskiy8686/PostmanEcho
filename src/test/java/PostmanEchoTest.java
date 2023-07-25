@@ -1,12 +1,8 @@
-package ru.netology.test;
-
-import static io.restassured.RestAssured.authentication;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
-
 import org.junit.jupiter.api.Test;
 
-class postmanEchoTest {
+class PostmanEchoTest {
 
     @Test
     void shouldTestSomeData() {
@@ -17,7 +13,7 @@ class postmanEchoTest {
                 .when()
                 .post("/post")
                 .then()
-                .statusCode(301)
+                .statusCode(200)
                 .body("data", equalTo("Good Day"));
     }
 
@@ -80,7 +76,7 @@ class postmanEchoTest {
                 .get("/basic-auth")
 
                 .then()
-                .statusCode(200)
+                .statusCode(300)
                 .body("authenticated", equalTo(true))
         ;
 
