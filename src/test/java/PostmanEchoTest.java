@@ -13,7 +13,7 @@ class PostmanEchoTest {
                 .when()
                 .post("/post")
                 .then()
-                .statusCode(300)
+                .statusCode(200)
                 .body("data", equalTo("Good Day"));
     }
 
@@ -25,7 +25,7 @@ class PostmanEchoTest {
                 .when()
                 .get("/get?foo1=bar1&foo2=bar2")
                 .then()
-                .statusCode(301)
+                .statusCode(200)
                 .body("args.foo1", equalTo("bar1"));
     }
 
@@ -38,7 +38,7 @@ class PostmanEchoTest {
                 .when()
                 .get("/get?foo1=bar1&foo2=bar2")
                 .then()
-                .statusCode(300)
+                .statusCode(200)
                 .body("args.foo2", equalTo("bar2"));
     }
 
@@ -50,7 +50,7 @@ class PostmanEchoTest {
                 .when()
                 .post("/post")
                 .then()
-                .statusCode(300)
+                .statusCode(200)
                 .body("data", equalTo("handWave"));
     }
 
@@ -61,7 +61,7 @@ class PostmanEchoTest {
                 .when()
                 .get("/headers")
                 .then()
-                .statusCode(300)
+                .statusCode(200)
                 .headers("Connection", "keep-alive",
                         "Content-Type", "application/json; charset=utf-8");
 
@@ -76,7 +76,7 @@ class PostmanEchoTest {
                 .get("/basic-auth")
 
                 .then()
-                .statusCode(300)
+                .statusCode(200)
                 .body("authenticated", equalTo(true))
         ;
 
